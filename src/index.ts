@@ -1,3 +1,9 @@
+type Employee = {
+    readonly id: number;
+    name: string;
+    retire: (date: Date) => void;
+}
+
 let age: number = 36;
 if (age < 50) {
   age += 10;
@@ -19,6 +25,8 @@ let obj = {
   hello: "world",
   numbers: numbers,
 };
+
+let employee: Employee = { id: 1, name: "", retire: (date:Date) => console.log(date) };
 
 // Tuples Type
 let user: [number, string] = [1, "Ryan"];
@@ -48,4 +56,4 @@ numbers.forEach((n) => console.log(n));
 render(obj.numbers);
 console.log("My Size: ", mySize);
 
-calculateTax(10000, 2023)
+calculateTax(10000, 2023);
