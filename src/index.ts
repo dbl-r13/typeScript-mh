@@ -1,3 +1,7 @@
+import { Account } from "./classes/Account";
+import { Ride } from "./classes/Ride";
+import {SeatAssignment} from "./classes/SeatAssignment";
+
 type Employee = {
   readonly id: number;
   name: string;
@@ -24,6 +28,10 @@ let numbers: number[] = [1, 2, 3];
 let obj = {
   hello: "world",
   numbers: numbers,
+  sales,
+  course,
+  isPublished,
+  level
 };
 
 let employee: Employee = {
@@ -62,33 +70,19 @@ console.log("My Size: ", mySize);
 
 calculateTax(10000, 2023);
 
-class Account {
-  //     readonly id: number;
-  //    private _balance: number;
-  //     owner:string;
-  nickname?: string;
-
-  constructor(
-    public readonly id: number,
-    private _balance: number,
-    public owner: string
-  ) {
-    // this.id = id;
-    // this._balance = balance;
-    // this.owner = owner;
-  }
-
-  deposit(amount: number): void {
-    if (amount <= 0) {
-      throw new Error("Invalid amount");
-    }
-    this._balance += amount;
-  }
-//   private calculateTax(): number {return 0}
-  getBalance(): number {
-    return this._balance;
-  }
-}
-
 let account = new Account(1, 0, "dbl.r13");
-console.log(account);
+console.log(account.balance);
+console.log(user, employee)
+
+
+let seats = new SeatAssignment();
+seats.A1 = "Ryan";
+// seats["A1"] = "Ryan"; This is the same value as above.
+seats.A2 = "Mosh";
+
+let ride1 = new Ride();
+ride1.start();
+let ride2 = new Ride();
+ride2.start();
+
+console.log("Active Rides: ", Ride.activeRides);

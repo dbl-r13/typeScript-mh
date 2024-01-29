@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Account_1 = require("./classes/Account");
-const Ride_1 = require("./classes/Ride");
-const SeatAssignment_1 = require("./classes/SeatAssignment");
+const Account_1 = require("../classes/Account");
+const Ride_1 = require("../classes/Ride");
 let age = 36;
 if (age < 50) {
     age += 10;
@@ -44,7 +43,9 @@ calculateTax(10000, 2023);
 let account = new Account_1.Account(1, 0, "dbl.r13");
 console.log(account.balance);
 console.log(user, employee);
-let seats = new SeatAssignment_1.SeatAssignment();
+class SeatAssignment {
+}
+let seats = new SeatAssignment();
 seats.A1 = "Ryan";
 seats.A2 = "Mosh";
 let ride1 = new Ride_1.Ride();
@@ -52,3 +53,4 @@ ride1.start();
 let ride2 = new Ride_1.Ride();
 ride2.start();
 console.log("Active Rides: ", Ride_1.Ride.activeRides);
+//# sourceMappingURL=index.js.map
