@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Account_1 = require("./classes/Account");
 const Ride_1 = require("./classes/Ride");
 const SeatAssignment_1 = require("./classes/SeatAssignment");
+const Student_1 = require("./classes/Student");
 let age = 36;
 if (age < 50) {
     age += 10;
@@ -52,3 +53,5 @@ ride1.start();
 let ride2 = new Ride_1.Ride();
 ride2.start();
 console.log("Active Rides: ", Ride_1.Ride.activeRides);
+let student = new Student_1.Student(32, "Ryan", "Richard", 36);
+console.log(student.statement, student.takeTest);

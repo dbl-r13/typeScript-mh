@@ -1,6 +1,7 @@
 import { Account } from "./classes/Account";
 import { Ride } from "./classes/Ride";
 import {SeatAssignment} from "./classes/SeatAssignment";
+import {Student} from "./classes/Student";
 
 type Employee = {
   readonly id: number;
@@ -86,3 +87,6 @@ let ride2 = new Ride();
 ride2.start();
 
 console.log("Active Rides: ", Ride.activeRides);
+
+let student = new Student(32,"Ryan", "Richard", 36);
+console.log(student.statement, student.takeTest);
