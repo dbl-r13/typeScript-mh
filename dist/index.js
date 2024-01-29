@@ -13,7 +13,11 @@ let obj = {
     hello: "world",
     numbers: numbers,
 };
-let employee = { id: 1, name: "", retire: (date) => console.log(date) };
+let employee = {
+    id: 1,
+    name: "",
+    retire: (date) => console.log(date),
+};
 let user = [1, "Ryan"];
 let mySize = 2;
 function render(document) {
@@ -30,18 +34,21 @@ render(obj.numbers);
 console.log("My Size: ", mySize);
 calculateTax(10000, 2023);
 class Account {
-    constructor(id, balance, owner) {
+    constructor(id, _balance, owner) {
         this.id = id;
-        this.balance = balance;
+        this._balance = _balance;
         this.owner = owner;
     }
     deposit(amount) {
         if (amount <= 0) {
             throw new Error("Invalid amount");
         }
-        this.balance += amount;
+        this._balance += amount;
+    }
+    getBalance() {
+        return this._balance;
     }
 }
-let account = new Account(1, 0, "Ryan");
-console.log(account.id);
+let account = new Account(1, 0, "dbl.r13");
+console.log(account);
 //# sourceMappingURL=index.js.map

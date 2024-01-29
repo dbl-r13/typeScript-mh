@@ -1,8 +1,8 @@
 type Employee = {
-    readonly id: number;
-    name: string;
-    retire: (date: Date) => void;
-}
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+};
 
 let age: number = 36;
 if (age < 50) {
@@ -26,7 +26,11 @@ let obj = {
   numbers: numbers,
 };
 
-let employee: Employee = { id: 1, name: "", retire: (date:Date) => console.log(date) };
+let employee: Employee = {
+  id: 1,
+  name: "",
+  retire: (date: Date) => console.log(date),
+};
 
 // Tuples Type
 let user: [number, string] = [1, "Ryan"];
@@ -58,28 +62,33 @@ console.log("My Size: ", mySize);
 
 calculateTax(10000, 2023);
 
-
 class Account {
-    readonly id: number;
-    balance: number;
-    owner:string;
-    nickname?: string;
-    
-    constructor(id:number, balance: number, owner:string){
-        this.id = id;
-        this.balance = balance;
-        this.owner = owner;
-    
-    }
+  //     readonly id: number;
+  //    private _balance: number;
+  //     owner:string;
+  nickname?: string;
 
-    deposit (amount:number): void{
-        if(amount <= 0){
-            throw new Error("Invalid amount")
-        }
-        this.balance += amount;
-    }
+  constructor(
+    public readonly id: number,
+    private _balance: number,
+    public owner: string
+  ) {
+    // this.id = id;
+    // this._balance = balance;
+    // this.owner = owner;
+  }
 
+  deposit(amount: number): void {
+    if (amount <= 0) {
+      throw new Error("Invalid amount");
+    }
+    this._balance += amount;
+  }
+//   private calculateTax(): number {return 0}
+  getBalance(): number {
+    return this._balance;
+  }
 }
 
-let account = new Account(1,0,"Ryan");
-console.log(account.id)
+let account = new Account(1, 0, "dbl.r13");
+console.log(account);
