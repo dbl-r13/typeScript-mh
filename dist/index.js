@@ -29,4 +29,19 @@ numbers.forEach((n) => console.log(n));
 render(obj.numbers);
 console.log("My Size: ", mySize);
 calculateTax(10000, 2023);
+class Account {
+    constructor(id, balance, owner) {
+        this.id = id;
+        this.balance = balance;
+        this.owner = owner;
+    }
+    deposit(amount) {
+        if (amount <= 0) {
+            throw new Error("Invalid amount");
+        }
+        this.balance += amount;
+    }
+}
+let account = new Account(1, 0, "Ryan");
+console.log(account.id);
 //# sourceMappingURL=index.js.map

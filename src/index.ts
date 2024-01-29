@@ -57,3 +57,29 @@ render(obj.numbers);
 console.log("My Size: ", mySize);
 
 calculateTax(10000, 2023);
+
+
+class Account {
+    readonly id: number;
+    balance: number;
+    owner:string;
+    nickname?: string;
+    
+    constructor(id:number, balance: number, owner:string){
+        this.id = id;
+        this.balance = balance;
+        this.owner = owner;
+    
+    }
+
+    deposit (amount:number): void{
+        if(amount <= 0){
+            throw new Error("Invalid amount")
+        }
+        this.balance += amount;
+    }
+
+}
+
+let account = new Account(1,0,"Ryan");
+console.log(account.id)
